@@ -7,64 +7,64 @@ import java.time.format.DateTimeFormatter;
  */
 public class Transaction {
 
-    private final String type;
-    private final double amount;
-    private final LocalDateTime time_stamp;
+  private final String type;
+  private final double amount;
+  private final LocalDateTime timeStamp;
 
-    private static final DateTimeFormatter FORMATTER =
-            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+  private static final DateTimeFormatter FORMATTER =
+      DateTimeFormatter.ofPattern(
+          "yyyy-MM-dd HH:mm");
 
-    /**
-     * Creates a transaction with the current timestamp.
-     *
-     * @param type the transaction type
-     * @param amount the transaction amount
-     */
-    public Transaction(String type, double amount) {
-        this.type = type;
-        this.amount = amount;
-        this.time_stamp = LocalDateTime.now();
-    }
+  /**
+   * Creates a transaction with the current timestamp.
+   *
+   * @param type   the transaction type
+   * @param amount the transaction amount
+   */
+  public Transaction(String type, double amount) {
+    this.type = type;
+    this.amount = amount;
+    this.timeStamp = LocalDateTime.now();
+  }
 
-    /**
-     * Returns the transaction type.
-     *
-     * @return the transaction type
-     */
-    public String getType() {
-        return type;
-    }
+  /**
+   * Returns the transaction type.
+   *
+   * @return the transaction type
+   */
+  public String getType() {
+    return type;
+  }
 
-    /**
-     * Returns the transaction amount.
-     *
-     * @return the transaction amount
-     */
-    public double getAmount() {
-        return amount;
-    }
+  /**
+   * Returns the transaction amount.
+   *
+   * @return the transaction amount
+   */
+  public double getAmount() {
+    return amount;
+  }
 
-    /**
-     * Returns the transaction timestamp.
-     *
-     * @return the transaction timestamp
-     */
-    public LocalDateTime getTimeStamp() {
-        return time_stamp;
-    }
+  /**
+   * Returns the transaction timestamp.
+   *
+   * @return the transaction timestamp
+   */
+  public LocalDateTime getTimeStamp() {
+    return timeStamp;
+  }
 
-    /**
-     * Returns the transaction details.
-     *
-     * @return the formatted transaction details
-     */
-    @Override
-    public String toString() {
-        return String.format(
-                "Transaction [type=%s, amount=%s, time_stamp=%s]",
-                type,
-                Double.toString(amount),
-                time_stamp.format(FORMATTER)
-        );
-    }
+  /**
+   * Returns the transaction details.
+   *
+   * @return the formatted transaction details
+   */
+  @Override
+  public String toString() {
+    return String.format(
+        "Transaction [type=%s, amount=%s, time_stamp=%s]",
+        type,
+        Double.toString(amount),
+        timeStamp.format(FORMATTER));
+  }
 }
